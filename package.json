@@ -1,0 +1,24 @@
+{
+  "name": "ngin",
+  "version": "1.0.0",
+  "description": "Infinitely-scalable Backend Engine based on AWS Services written in Typescript.",
+  "main": "app.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/georstoy/ngin.git"
+  },
+  "keywords": [
+    "AWS",
+    "Serverless",
+    "API"
+  ],
+  "author": "Stoyan Georgiev",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/georstoy/ngin/issues"
+  },
+  "homepage": "https://github.com/georstoy/ngin#readme"
+}
