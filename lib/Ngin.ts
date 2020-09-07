@@ -1,10 +1,10 @@
 import {Stack, Construct, StackProps} from '@aws-cdk/core';
 
-export interface NginConfig extends StackProps {
-}
-
 import {GraphQLApiService} from "./services/graphql-api-service/GraphQLApiService"
 import {IApiService} from "./interfaces/IApiService";
+
+export interface NginConfig extends StackProps {
+}
 
 export class Ngin extends Stack {
     private apiService: IApiService
