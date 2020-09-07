@@ -1,22 +1,23 @@
 import {CfnOutput, Construct} from "@aws-cdk/core";
-import {AuthorizationType, GraphQLApi, Schema} from "@aws-cdk/aws-appsync";
+import {AuthorizationType, GraphqlApi, Schema} from "@aws-cdk/aws-appsync";
 
 import {IApiService} from "../../interfaces/IApiService";
 import {IApiServiceConfig} from "../../interfaces/IApiServiceConfig";
 
 export class GraphQLApiService extends Construct implements IApiService {
-    private api: GraphQLApi;
+    private api: GraphqlApi;
 
     constructor(scope: Construct, id: string, props?: IApiServiceConfig) {
         super(scope, id);
         this.api = this.createGraphQLApi();
+
     }
 
     public exportUrl() {
         new CfnOutput(this, 'exportApiUrl', {
             exportName: "graphql-api-url",
             description: "Call the GraphQL API on this URL",
-            value: this.api.graphQlUrl
+            value: this.api.graphqlUrl
         })
     }
 
@@ -29,8 +30,8 @@ export class GraphQLApiService extends Construct implements IApiService {
         })
     }
 
-    private createGraphQLApi(): GraphQLApi {
-        return new GraphQLApi(this, "Api", {
+    private createGraphQLApi(): GraphqlApi {
+        return new GraphqlApi(this, "Api", {
             name: "graphql-api",
             schema: Schema.fromAsset(`${__dirname}/schema.graphql`),
             authorizationConfig: {
